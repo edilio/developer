@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+<title>Change application | AMERICA 1st CHOICE site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+
+
+<script src="/admin/jsi18n/"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/jquery.min.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/actions.min.js"></script>
+<script src="/static/admin/js/calendar.js"></script>
+<script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script src="/static/admin/js/inlines.min.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class="applications-application change-form">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name">AMERICA 1st CHOICE administration</h1>
+
+        </div>
+
+        <div id="user-tools">
+            Welcome,
+            <strong>Edilio</strong>.
+
+
+
+                    <a href="/admin/doc/">Documentation</a> /
+
+                <a href="/admin/password_change/">Change password</a> /
+                <a href="/admin/logout/">Log out</a>
+
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+&rsaquo; <a href="/admin/applications/">Applications</a>
+&rsaquo; <a href="/admin/applications/application/">Applications</a>
+&rsaquo; Jesus J. Hernandez appl# = 8, born=1980-09-28
+</div>
+
+
+
+
+
+
+
+    <!-- Content -->
+    <div id="content" class="colM">
+
+        <h1>Change application</h1>
+        <div id="content-main">
+
+
+  <ul class="object-tools">
+
+    <li><a href="history/" class="historylink">History</a></li>
+
+
+  </ul>
+
+
+<form enctype="multipart/form-data" action="" method="post" id="application_form"><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='47f0d05af4675b9cdea4e41ef48f8578' /></div>
+<div>
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    <h2>Member Personal Information</h2>
+
+
+        <div class="form-row plan_selected status application_date activation_date lead_number agent">
+
+
+                <div class="field-box">
+
+
+                        <label for="id_plan_selected" class="required">Plan selected:</label>
+
+                            <select name="plan_selected" id="id_plan_selected">
+<option value="1">Integral</option>
+<option value="2">Healthcare</option>
+<option value="3">Life Style</option>
+<option value="4" selected="selected">Physician &amp; Hospital</option>
+</select>
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_status" class="required inline">Status:</label>
+
+                            <select name="status" id="id_status">
+<option value="A" selected="selected">Active</option>
+<option value="C">Cancelled</option>
+<option value="D">After Due Date</option>
+</select>
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label class="inline">Application date:</label>
+
+                            <p>Dec. 4, 2011</p>
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_activation_date" class="required inline">Activation date:</label>
+
+                            <input name="activation_date" value="2011-12-14" class="vDateField" type="text" id="id_activation_date" size="10" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_lead_number" class="inline">Lead number:</label>
+
+                            <input id="id_lead_number" type="text" class="vIntegerField" name="lead_number" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_agent" class="required inline">Agent:</label>
+
+                            <select name="agent" id="id_agent">
+<option value="">---------</option>
+<option value="1" selected="selected">Ramon Hernandez</option>
+<option value="2">Alexander Silva</option>
+</select><a href="/admin/leadsender/agent/add/" class="add-another" id="add_id_agent" onclick="return showAddAnotherPopup(this);"> <img src="/static/admin/img/icon_addlink.gif" width="10" height="10" alt="Add Another"/></a>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row first_name mi last_name phone email_address gender">
+
+
+                <div class="field-box">
+
+
+                        <label for="id_first_name" class="required">First name:</label>
+
+                            <input name="first_name" value="Jesus" class="vTextField" maxlength="30" type="text" id="id_first_name" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_mi" class="inline">Mi:</label>
+
+                            <input name="mi" value="J" class="vTextField" maxlength="1" type="text" id="id_mi" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_last_name" class="required inline">Last name:</label>
+
+                            <input name="last_name" value="Hernandez" class="vTextField" maxlength="30" type="text" id="id_last_name" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_phone" class="required inline">Phone:</label>
+
+                            <input name="phone" value="7864452200" class="vTextField" maxlength="11" type="text" id="id_phone" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_email_address" class="inline">Email address:</label>
+
+                            <input name="email_address" value="ramondejesushm@hotmail.com" class="vTextField" maxlength="75" type="text" id="id_email_address" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_gender" class="required inline">Gender:</label>
+
+                            <select name="gender" id="id_gender">
+<option value="">---------</option>
+<option value="M" selected="selected">Male</option>
+<option value="F">Female</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row address apartment city state zip_code birth_date">
+
+
+                <div class="field-box">
+
+
+                        <label for="id_address" class="required">Address:</label>
+
+                            <input name="address" value="6923 NW 77 AVE" class="vTextField" maxlength="50" type="text" id="id_address" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_apartment" class="inline">Apartment:</label>
+
+                            <input id="id_apartment" type="text" class="vTextField" name="apartment" maxlength="10" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_city" class="required inline">City:</label>
+
+                            <input name="city" value="MIAMI" class="vTextField" maxlength="20" type="text" id="id_city" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_state" class="required inline">State:</label>
+
+                            <select name="state" id="id_state">
+<option value="AK">Alaska</option>
+<option value="AL">Alabama</option>
+<option value="AR">Arkansas</option>
+<option value="AS">American Samoa</option>
+<option value="AZ">Arizona</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DC">District Of Columbia</option>
+<option value="DE">Delaware</option>
+<option value="FL" selected="selected">Florida</option>
+<option value="GA">Georgia</option>
+<option value="GU">Guam</option>
+<option value="HI">Hawaii</option>
+<option value="IA">Iowa</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="MA">Massachusetts</option>
+<option value="MD">Maryland</option>
+<option value="ME">Maine</option>
+<option value="MH">Marshall Islands</option>
+<option value="MI">Michigan</option>
+<option value="MN">Minnesota</option>
+<option value="MO">Missouri</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="MS">Mississippi</option>
+<option value="MT">Montana</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="NE">Nebraska</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NV">Nevada</option>
+<option value="NY">New York</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="OR">Oregon</option>
+<option value="PA">Pennsylvania</option>
+<option value="PR">Puerto Rico</option>
+<option value="PW">Palau</option>
+<option value="RI">Rhode Island</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VA">Virginia</option>
+<option value="VI">US Virgin Islands</option>
+<option value="VT">Vermont</option>
+<option value="WA">Washington</option>
+<option value="WI">Wisconsin</option>
+<option value="WV">West Virginia</option>
+<option value="WY">Wyoming</option>
+</select>
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_zip_code" class="required inline">Zip code:</label>
+
+                            <input name="zip_code" value="33166" class="vTextField" maxlength="11" type="text" id="id_zip_code" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_birth_date" class="required inline">Birth date:</label>
+
+                            <input name="birth_date" value="1980-09-28" class="vDateField" type="text" id="id_birth_date" size="10" />
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+<h3>edilio</h3>
+
+<div class="inline-group" id="family_member_set-group">
+  <div class="tabular inline-related last-related">
+<input type="hidden" name="family_member_set-TOTAL_FORMS" value="1" id="id_family_member_set-TOTAL_FORMS" /><input type="hidden" name="family_member_set-INITIAL_FORMS" value="0" id="id_family_member_set-INITIAL_FORMS" /><input type="hidden" name="family_member_set-MAX_NUM_FORMS" value="6" id="id_family_member_set-MAX_NUM_FORMS" />
+<fieldset class="module">
+   <h2>Members</h2>
+
+   <table>
+     <thead><tr>
+
+
+         <th colspan="2" class="required">First Name
+
+         </th>
+
+
+
+         <th class="required">Last Name
+
+         </th>
+
+
+
+         <th>Middle Initial
+
+         </th>
+
+
+
+         <th class="required">Activation date
+
+         </th>
+
+
+
+         <th class="required">Birth date
+
+         </th>
+
+
+
+         <th class="required">Status
+
+         </th>
+
+
+
+         <th class="required">Gender
+
+         </th>
+
+
+
+         <th class="required">Relation
+
+         </th>
+
+
+     <th>Delete?</th>
+     </tr></thead>
+
+     <tbody>
+
+
+        <tr class="row1 "
+             id="family_member_set-0">
+        <td class="original">
+
+          <input type="hidden" name="family_member_set-0-id" id="id_family_member_set-0-id" />
+          <input type="hidden" name="family_member_set-0-application" value="8" id="id_family_member_set-0-application" />
+
+        </td>
+
+
+
+              <td class="first_name">
+
+
+                  <input id="id_family_member_set-0-first_name" type="text" class="vTextField" name="family_member_set-0-first_name" maxlength="30" />
+
+              </td>
+
+
+
+              <td class="last_name">
+
+
+                  <input id="id_family_member_set-0-last_name" type="text" class="vTextField" name="family_member_set-0-last_name" maxlength="30" />
+
+              </td>
+
+
+
+              <td class="mi">
+
+
+                  <input id="id_family_member_set-0-mi" type="text" class="vTextField" name="family_member_set-0-mi" maxlength="1" />
+
+              </td>
+
+
+
+              <td class="activation_date">
+
+
+                  <input name="family_member_set-0-activation_date" value="2011-12-06" class="vDateField" type="text" id="id_family_member_set-0-activation_date" size="10" />
+
+              </td>
+
+
+
+              <td class="birth_date">
+
+
+                  <input id="id_family_member_set-0-birth_date" type="text" class="vDateField" name="family_member_set-0-birth_date" size="10" />
+
+              </td>
+
+
+
+              <td class="status">
+
+
+                  <select name="family_member_set-0-status" id="id_family_member_set-0-status">
+<option value="A" selected="selected">Active</option>
+<option value="I">Inactive</option>
+</select>
+
+              </td>
+
+
+
+              <td class="gender">
+
+
+                  <select name="family_member_set-0-gender" id="id_family_member_set-0-gender">
+<option value="" selected="selected">---------</option>
+<option value="M">Male</option>
+<option value="F">Female</option>
+</select>
+
+              </td>
+
+
+
+              <td class="relation">
+
+
+                  <select name="family_member_set-0-relation" id="id_family_member_set-0-relation">
+<option value="" selected="selected">---------</option>
+<option value="S">Spouse</option>
+<option value="N">Son</option>
+<option value="D">Daugther</option>
+<option value="F">Father</option>
+<option value="M">Mother</option>
+<option value="I">Sister</option>
+<option value="B">Brother</option>
+<option value="O">Other</option>
+</select>
+
+              </td>
+
+
+
+
+          <td class="delete"></td>
+
+        </tr>
+
+
+        <tr class="row2  empty-form"
+             id="family_member_set-empty">
+        <td class="original">
+
+          <input type="hidden" name="family_member_set-__prefix__-id" id="id_family_member_set-__prefix__-id" />
+          <input type="hidden" name="family_member_set-__prefix__-application" value="8" id="id_family_member_set-__prefix__-application" />
+
+        </td>
+
+
+
+              <td class="first_name">
+
+
+                  <input id="id_family_member_set-__prefix__-first_name" type="text" class="vTextField" name="family_member_set-__prefix__-first_name" maxlength="30" />
+
+              </td>
+
+
+
+              <td class="last_name">
+
+
+                  <input id="id_family_member_set-__prefix__-last_name" type="text" class="vTextField" name="family_member_set-__prefix__-last_name" maxlength="30" />
+
+              </td>
+
+
+
+              <td class="mi">
+
+
+                  <input id="id_family_member_set-__prefix__-mi" type="text" class="vTextField" name="family_member_set-__prefix__-mi" maxlength="1" />
+
+              </td>
+
+
+
+              <td class="activation_date">
+
+
+                  <input name="family_member_set-__prefix__-activation_date" value="2011-12-06" class="vDateField" type="text" id="id_family_member_set-__prefix__-activation_date" size="10" />
+
+              </td>
+
+
+
+              <td class="birth_date">
+
+
+                  <input id="id_family_member_set-__prefix__-birth_date" type="text" class="vDateField" name="family_member_set-__prefix__-birth_date" size="10" />
+
+              </td>
+
+
+
+              <td class="status">
+
+
+                  <select name="family_member_set-__prefix__-status" id="id_family_member_set-__prefix__-status">
+<option value="A" selected="selected">Active</option>
+<option value="I">Inactive</option>
+</select>
+
+              </td>
+
+
+
+              <td class="gender">
+
+
+                  <select name="family_member_set-__prefix__-gender" id="id_family_member_set-__prefix__-gender">
+<option value="" selected="selected">---------</option>
+<option value="M">Male</option>
+<option value="F">Female</option>
+</select>
+
+              </td>
+
+
+
+              <td class="relation">
+
+
+                  <select name="family_member_set-__prefix__-relation" id="id_family_member_set-__prefix__-relation">
+<option value="" selected="selected">---------</option>
+<option value="S">Spouse</option>
+<option value="N">Son</option>
+<option value="D">Daugther</option>
+<option value="F">Father</option>
+<option value="M">Mother</option>
+<option value="I">Sister</option>
+<option value="B">Brother</option>
+<option value="O">Other</option>
+</select>
+
+              </td>
+
+
+
+
+          <td class="delete"></td>
+
+        </tr>
+
+     </tbody>
+   </table>
+</fieldset>
+  </div>
+</div>
+
+  <fieldset class="module aligned ">
+    <h2>Payment Information</h2>
+
+
+        <div class="form-row check_or_money_order check_or_money_order_payment_method">
+
+
+                <div class="field-box">
+
+
+                        <input checked="checked" type="checkbox" name="check_or_money_order" id="id_check_or_money_order" /><label for="id_check_or_money_order" class="vCheckboxLabel">Check or Money Order</label>
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_check_or_money_order_payment_method" class="inline">:</label>
+
+                            <select name="check_or_money_order_payment_method" id="id_check_or_money_order_payment_method">
+<option value="">---------</option>
+<option value="1" selected="selected">First &amp; Recurring Payment</option>
+<option value="2">Only First Payment</option>
+<option value="3">Recurring Payment</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row credit_card credit_card_payment_method">
+
+
+                <div class="field-box">
+
+
+                        <input type="checkbox" name="credit_card" id="id_credit_card" /><label for="id_credit_card" class="vCheckboxLabel">Credit or Debit Card</label>
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_credit_card_payment_method" class="inline">:</label>
+
+                            <select name="credit_card_payment_method" id="id_credit_card_payment_method">
+<option value="" selected="selected">---------</option>
+<option value="1">First &amp; Recurring Payment</option>
+<option value="2">Only First Payment</option>
+<option value="3">Recurring Payment</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row direct_withdrawal direct_withdrawal_payment_method">
+
+
+                <div class="field-box">
+
+
+                        <input type="checkbox" name="direct_withdrawal" id="id_direct_withdrawal" /><label for="id_direct_withdrawal" class="vCheckboxLabel">Direct Withdrawal</label>
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_direct_withdrawal_payment_method" class="inline">:</label>
+
+                            <select name="direct_withdrawal_payment_method" id="id_direct_withdrawal_payment_method">
+<option value="" selected="selected">---------</option>
+<option value="3">Recurring Payment</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Credit Card Info</h2>
+
+
+        <div class="form-row card_type">
+
+
+                <div>
+
+
+                        <label for="id_card_type">Card type:</label>
+
+                            <select name="card_type" id="id_card_type">
+<option value="" selected="selected">---------</option>
+<option value="1">Master Card</option>
+<option value="2">Visa</option>
+<option value="3">AMEX</option>
+<option value="4">Discovery</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row card_holder_name credit_card_number e_sign">
+
+
+                <div class="field-box">
+
+
+                        <label for="id_card_holder_name">Card holder name:</label>
+
+                            <input id="id_card_holder_name" type="text" class="vTextField" name="card_holder_name" maxlength="30" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_credit_card_number" class="inline">Credit card number:</label>
+
+                            <input id="id_credit_card_number" type="text" class="vTextField" name="credit_card_number" maxlength="16" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_e_sign" class="inline">E sign:</label>
+
+                            <input id="id_e_sign" type="text" class="vTextField" name="e_sign" maxlength="30" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row billing_address expiration_date_month expiration_date_year code">
+
+
+                <div class="field-box">
+
+
+                        <label for="id_billing_address">Billing address:</label>
+
+                            <input id="id_billing_address" type="text" class="vTextField" name="billing_address" maxlength="50" />
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_expiration_date_month" class="inline">Expiration date month:</label>
+
+                            <select name="expiration_date_month" id="id_expiration_date_month">
+<option value="" selected="selected">---------</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_expiration_date_year" class="inline">Expiration date year:</label>
+
+                            <select name="expiration_date_year" id="id_expiration_date_year">
+<option value="" selected="selected">---------</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+</select>
+
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_code" class="inline">Code:</label>
+
+                            <input id="id_code" type="text" class="vTextField" name="code" maxlength="3" />
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Direct Withdrawal Information</h2>
+
+
+        <div class="form-row bank">
+
+
+                <div>
+
+
+                        <label for="id_bank">Bank:</label>
+
+                            <select name="bank" id="id_bank">
+<option value="">---------</option>
+<option value="3">Bank of AmericA: 123456789</option>
+<option value="1" selected="selected">Chase: 267084131</option>
+<option value="2">Manhatan : 123456</option>
+</select><a href="/admin/applications/bank/add/" class="add-another" id="add_id_bank" onclick="return showAddAnotherPopup(this);"> <img src="/static/admin/img/icon_addlink.gif" width="10" height="10" alt="Add Another"/></a>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row account_no">
+
+
+                <div>
+
+
+                        <label for="id_account_no">Account no:</label>
+
+                            <input name="account_no" value="123233456" class="vTextField" maxlength="16" type="text" id="id_account_no" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row bank_e_sign">
+
+
+                <div>
+
+
+                        <label for="id_bank_e_sign">E-sign:</label>
+
+                            <input id="id_bank_e_sign" type="text" class="vTextField" name="bank_e_sign" maxlength="30" />
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Agreement</h2>
+
+
+        <div class="form-row head_agreed head_electronic_signature">
+
+
+                <div class="field-box">
+
+
+                        <input type="checkbox" name="head_agreed" id="id_head_agreed" /><label for="id_head_agreed" class="vCheckboxLabel">Yes, I agree</label>
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_head_electronic_signature" class="required inline">E-sign:</label>
+
+                            <input id="id_head_electronic_signature" type="text" class="vTextField" name="head_electronic_signature" maxlength="30" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row agent_agreed agent_electronic_signature">
+
+
+                <div class="field-box">
+
+
+                        <input type="checkbox" name="agent_agreed" id="id_agent_agreed" /><label for="id_agent_agreed" class="vCheckboxLabel">Yes, I agree</label>
+
+
+                </div>
+
+                <div class="field-box">
+
+
+                        <label for="id_agent_electronic_signature" class="inline">E-sign:</label>
+
+                            <input id="id_agent_electronic_signature" type="text" class="vTextField" name="agent_electronic_signature" maxlength="30" />
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function($) {
+        var rows = "#family_member_set-group .tabular.inline-related tbody tr";
+        var alternatingRows = function(row) {
+            $(rows).not(".add-row").removeClass("row1 row2")
+                .filter(":even").addClass("row1").end()
+                .filter(rows + ":odd").addClass("row2");
+        }
+        var reinitDateTimeShortCuts = function() {
+            // Reinitialize the calendar and clock widgets by force
+            if (typeof DateTimeShortcuts != "undefined") {
+                $(".datetimeshortcuts").remove();
+                DateTimeShortcuts.init();
+            }
+        }
+        var updateSelectFilter = function() {
+            // If any SelectFilter widgets are a part of the new form,
+            // instantiate a new SelectFilter instance for it.
+            if (typeof SelectFilter != "undefined"){
+                $(".selectfilter").each(function(index, value){
+                  var namearr = value.name.split('-');
+                  SelectFilter.init(value.id, namearr[namearr.length-1], false, "/static/admin/");
+                });
+                $(".selectfilterstacked").each(function(index, value){
+                  var namearr = value.name.split('-');
+                  SelectFilter.init(value.id, namearr[namearr.length-1], true, "/static/admin/");
+                });
+            }
+        }
+        var initPrepopulatedFields = function(row) {
+            row.find('.prepopulated_field').each(function() {
+                var field = $(this);
+                var input = field.find('input, select, textarea');
+                var dependency_list = input.data('dependency_list') || [];
+                var dependencies = [];
+                $.each(dependency_list, function(i, field_name) {
+                  dependencies.push('#' + row.find(field_name).find('input, select, textarea').attr('id'));
+                });
+                if (dependencies.length) {
+                    input.prepopulate(dependencies, input.attr('maxlength'));
+                }
+            });
+        }
+        $(rows).formset({
+            prefix: "family_member_set",
+            addText: "Add another Member",
+            formCssClass: "dynamic-family_member_set",
+            deleteCssClass: "inline-deletelink",
+            deleteText: "Remove",
+            emptyCssClass: "empty-form",
+            removed: alternatingRows,
+            added: (function(row) {
+                initPrepopulatedFields(row);
+                reinitDateTimeShortCuts();
+                updateSelectFilter();
+                alternatingRows(row);
+            })
+        });
+    });
+})(django.jQuery);
+</script>
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save" />
+<p class="deletelink-box"><a href="delete/" class="deletelink">Delete</a></p>
+
+<input type="submit" value="Save and add another" name="_addanother"  />
+<input type="submit" value="Save and continue editing" name="_continue" />
+</div>
+
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    var field = null;
+
+
+})(django.jQuery);
+</script>
+
+
+</div>
+</form></div>
+
+
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

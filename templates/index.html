@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Copyright JED Utils
+
+Author: Edilio Gallardo (edilio73@gmail.com)
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="enhanced.css">
+    <link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+    <title>Jed Utils tools</title>
+
+<script>
+    function help(){
+
+        alert("This program will help our company to undestand our technology and our ideas\n");
+    }
+</script>
+</head>
+<body>
+
+<div id="home" data-role="page" data-theme="b">
+	<div data-role="header" data-theme="b">
+
+		<h2 align="center">Our Company</h2>
+
+	</div>
+	<div data-role="content">
+
+        <ul id="home_ul" data-role="listview" data-inset="true">
+
+            <li>
+
+              <br><a href="/modules/" title="Our Modules" rel="external">Our Modules</a></br>
+
+			</li>
+
+            <li>
+
+              <br><a href="/submodules/" title="Our submodules" rel="external">Our submodules</a></br>
+
+			</li>
+
+
+            <li>
+
+              <br><a href="/ideas/" title="Our Ideas" rel="external">Our Ideas</a></br>
+
+			</li>
+
+        </ul>
+ </div>
+    <div id="footer_bar" data-role="footer" data-theme="b" data-position="fixed">
+        <div align="right"><button id="helpbtn" onclick="help();" >Help</button> </div>
+    </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_static admin_modify %}
+{% load url from future %}
+
+{% block extrahead %}{{ block.super }}
+    {% url 'admin:jsi18n' as jsi18nurl %}
+    <script type="text/javascript" src="{{ jsi18nurl|default:"../../../jsi18n/" }}"></script>
+    <!--<script type="text/javascript" src="http://gss-office.dyndns.org/media/js/jquery.maskedinput.js"></script>-->
+    {{ media }}
+    <style type="text/css">
+        .vShortTextField {
+            width: 15em;
+        }
+        .vShortestTextField {
+            width: 5em;
+        }
+        .vNameTextField {
+            width: 10em;
+        }
+    </style>
+    <script>
+
+        function max_number_of_sales(market_population, market_percentage){
+
+            return market_population*market_percentage/100;
+        }
+
+        function total_number_of_sales(years, market_population, market_percentage,monthly_sales){
+            max_no_of_sales = max_number_of_sales(market_population, market_percentage);
+            if (monthly_sales*12*years < max_no_of_sales)
+                return monthly_sales*12*years;
+            else
+                return max_no_of_sales;
+        }
+
+        function expection_in_years(years,market_population, market_percentage,monthly_sales,initial_cost,monthly_cost,sale_price,subscription_fee){
+            totalNumberOfSales = total_number_of_sales(years,market_population, market_percentage,monthly_sales);
+            cost = initial_cost + monthly_cost*12*years;
+            earnings = totalNumberOfSales*(sale_price + subscription_fee*12*years);
+            return earnings - cost;
+        }
+
+        function getInt(fieldname){
+            return parseInt(django.jQuery(fieldname).val());
+        }
+
+        function update_expectation_x_years(){
+            var years = getInt('#id_years'),
+                market_population  = getInt('#id_market_population'),
+                market_percentage  = getInt('#id_market_percentage'),
+                monthly_sales = getInt('#id_monthly_sales'),
+                initial_cost = getInt('#id_initial_cost'),
+                monthly_cost = getInt('#id_monthly_cost'),
+                sale_price = getInt('#id_sale_price'),
+                subscription_fee = getInt('#id_subscription_fee')
+                result = expection_in_years(years,market_population, market_percentage,monthly_sales,initial_cost,monthly_cost,sale_price,subscription_fee);
+            django.jQuery('#id_expectation_x_years').val(result);
+
+        }
+
+        django.jQuery(document).ready(function() {
+
+            django.jQuery('#id_years').change(update_expectation_x_years);
+
+        });
+    </script>
+
+{% endblock %}
+
+{% block content %}<div id="content-main">
+    {% block object-tools %}
+        {% if change %}{% if not is_popup %}
+            <ul class="object-tools">
+                {% block object-tools-items %}
+                    <li><a href="history/" class="historylink">{% trans "History" %}</a></li>
+                    {% if has_absolute_url %}<li><a href="../../../r/{{ content_type_id }}/{{ object_id }}/" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif%}
+                {% endblock %}
+            </ul>
+        {% endif %}{% endif %}
+    {% endblock %}
+    <form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.module_name }}_form">{% csrf_token %}{% block form_top %}{% endblock %}
+        <div>
+            {% if is_popup %}<input type="hidden" name="_popup" value="1" />{% endif %}
+            {% if save_on_top %}{% submit_row %}{% endif %}
+            {% if errors %}
+                <p class="errornote">
+                    {% blocktrans count errors|length as counter %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+                </p>
+                {{ adminform.form.non_field_errors }}
+            {% endif %}
+
+            {% for fieldset in adminform %}
+                {% if fieldset.name == "Member Personal Information" %}
+                    {% include "admin/includes/fieldset.html" %}
+                {%  endif %}
+            {% endfor %}
+
+            {% for inline_admin_formset in inline_admin_formsets %}
+                {% include inline_admin_formset.opts.template %}
+            {% endfor %}
+
+            {% for fieldset in adminform %}
+                {% if fieldset.name != "Member Personal Information" %}
+                    {% include "admin/includes/fieldset.html" %}
+                {%  endif %}
+            {% endfor %}
+
+            {% block after_field_sets %}{% endblock %}
+
+            {% block after_related_objects %}{% endblock %}
+
+            {% submit_row %}
+
+            {% if adminform and add %}
+                <script type="text/javascript">
+                    document.getElementById("{{ adminform.first_field.id_for_label }}").focus();
+                </script>
+            {% endif %}
+
+            <script type="text/javascript">
+
+            </script>
+            {# JavaScript for prepopulated fields #}
+            {% prepopulated_fields_js %}
+
+        </div>
+    </form>
+
+    </div>
+{% endblock %}
+
+
