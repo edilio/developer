@@ -124,3 +124,9 @@ INSTALLED_APPS = (
 )
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+STATIC_ROOT = '/var/www/html/wmedia/developers/static/'
+
+# URL prefix for static files.
+# Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_URL = '/static/'
