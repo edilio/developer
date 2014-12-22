@@ -1,0 +1,4 @@
+django==1.7
+gunicorn==18.0
+django-robots==1.0
+django-localflavor==1.0

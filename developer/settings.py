@@ -1,4 +1,6 @@
-# Django settings for developer project.
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/var/www/html/websites/developer/dev.sqlite',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(BASE_DIR, 'dev.sqlite'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -103,7 +105,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/var/www/html/websites/developer/templates'
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -117,36 +119,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'dev',
-    'ideas'
+    'apps.dev',
+    'apps.ideas'
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.CallbackFilter',
-            'callback': lambda r: not DEBUG
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'

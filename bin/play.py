@@ -1,7 +1,8 @@
+from developer import settings
+
 __author__ = 'edilio'
 
 from django.core.management import setup_environ
-from django.core.management import execute_manager
 
 import imp
 try:
@@ -11,10 +12,8 @@ except ImportError:
     sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. It appears you've customized things.\nYou'll have to run django-admin.py, passing it your settings module.\n" % __file__)
     sys.exit(1)
 
-import settings
 setup_environ(settings)
-from ideas.models import *
-import timeit
+from apps.ideas.models import *
 
 idea = Idea.objects.all()[2]
 print idea.expection_in_years(10)

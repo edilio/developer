@@ -1,4 +1,4 @@
 developer
 =========
 
-A website to manage ideas for delopment
+A website to manage ideas for development
