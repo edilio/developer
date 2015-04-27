@@ -1,6 +1,7 @@
 __author__ = 'edilio'
 
 from django.contrib import admin
+from django.utils import timezone
 
 from apps.ideas.models import *
 
@@ -12,7 +13,8 @@ class IdeaAdmin(admin.ModelAdmin):
                     'initial_cost', 'monthly_cost', 'sale_price', 'subscription_fee',
                     'expectation', 'years', 'expectation_x_years')
 
-    list_filter = ('category', 'status', 'created_by')
+    list_filter = ('category', 'status', 'created_by',)
+
 
     search_fields = ('name', 'long_description')
 
@@ -24,7 +26,7 @@ class IdeaAdmin(admin.ModelAdmin):
         }),
         (None, {
             'fields': (
-                ('category', 'status', 'created_by'),
+                ('category', 'status'),
             )
         }),
 
@@ -56,14 +58,27 @@ class IdeaAdmin(admin.ModelAdmin):
 
             )
         }),
+        ('Dates', {
+            'fields': (
+
+                ('created_on', 'created_by', 'modified_by', 'modified_on'),
+
+            )
+        }),
+
         )
 
     list_per_page = 25
 
-    readonly_fields = ('created_by', )
+    readonly_fields = ('created_by', 'created_on', 'modified_by', 'modified_on')
 
     def save_model(self, request, obj, form, change):
-        obj.created_by = request.user
+        if obj.created_by:
+            obj.modified_by = request.user
+            obj.modified_on = timezone.now()
+        else:
+            obj.created_by = request.user
+            obj.created_on = timezone.now()
         obj.save()
 
 

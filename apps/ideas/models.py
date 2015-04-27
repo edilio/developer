@@ -57,6 +57,8 @@ class Idea(models.Model):
     status = models.PositiveSmallIntegerField(default=1, choices=STATUS_OPTIONS)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
+    modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name="users", blank=True)
+    modified_on = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ('-expectation_x_years',)
