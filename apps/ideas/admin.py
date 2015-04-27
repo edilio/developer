@@ -24,7 +24,7 @@ class IdeaAdmin(admin.ModelAdmin):
         }),
         (None, {
             'fields': (
-                ('category', 'status',),
+                ('category', 'status', 'created_by'),
             )
         }),
 
