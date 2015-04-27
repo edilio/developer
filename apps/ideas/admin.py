@@ -12,7 +12,7 @@ class IdeaAdmin(admin.ModelAdmin):
                     'initial_cost', 'monthly_cost', 'sale_price', 'subscription_fee',
                     'expectation', 'years', 'expectation_x_years')
 
-    list_filter = ('category', 'status')
+    list_filter = ('category', 'status', 'created_by')
 
     search_fields = ('name', 'long_description')
 
@@ -59,6 +59,12 @@ class IdeaAdmin(admin.ModelAdmin):
         )
 
     list_per_page = 25
+
+    readonly_fields = ('created_by', )
+
+    def save_model(self, request, obj, form, change):
+        obj.created_by = request.user
+        obj.save()
 
 
 @admin.register(Category)

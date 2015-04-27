@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Category(models.Model):
@@ -54,6 +55,8 @@ class Idea(models.Model):
                                                       editable=True)
 
     status = models.PositiveSmallIntegerField(default=1, choices=STATUS_OPTIONS)
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
 
     class Meta:
         ordering = ('-expectation_x_years',)
